@@ -19,7 +19,7 @@ const invalidBoard = [
 
     ["0", "0", "0",     "0", "0", "0"   , "0", "0", "0"],
     ["0", "0", "0",     "0", "1", "0"   , "0", "0", "0"],
-    ["0", "0", "0",     "0", "0", "0"   , "0", "0", "0"],
+    ["0", "0", "0",     "0", "0", "0"   , "0", "2", "0"],
 
     ["0", "0", "0",     "0", "0", "0"   , "0", "0", "0"],
     ["0", "0", "0",     "0", "0", "0"   , "0", "0", "0"],
@@ -27,7 +27,6 @@ const invalidBoard = [
 ];
 
 const max = 9 ;
-
 
 function printBoard(board) {
 
@@ -56,19 +55,14 @@ function printBoard(board) {
     return output ; 
 }
 
+function isRowValid(board , row) {
 
+
+}
 
 function isValid(board) {
 
-    for(let i = 0 ;  i < max ; i++) {
-        for(let j = 0 ; j < max ; j++) {
-            for(let k = j + 1 ; k < max; k++) {
-                if(board[i][j] !== "0" && board[i][j] === board[i][k]) {
-                    return false ;
-                }
-            }
-        }
-    }
+
 
     return true ;
 }
