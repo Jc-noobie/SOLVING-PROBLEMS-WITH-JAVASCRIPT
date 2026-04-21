@@ -1,3 +1,10 @@
-console.log("will make this later")
+const array = [8,20,-2 ,4,-6] ;
 
-console.log("still not finish this")
+function insertionSort(arr) {
+
+    return arr ;
+}
+
+const result = insertionSort(array) ; 
+
+console.log(result) ; 
