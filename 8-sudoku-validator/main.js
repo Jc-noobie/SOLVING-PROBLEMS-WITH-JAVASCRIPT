@@ -55,16 +55,73 @@ function printBoard(board) {
     return output ; 
 }
 
-function isRowValid(board , row) {
+function isRowValid(board ) {
+    
+    for(let i = 0 ; i < max; i++) {
+        let temp = new Set() ;
 
+        for(let j = 0 ; j < max; j++) {
 
+            if(board[i][j] !== "0" ) {
+                if(!temp.has(board[i][j])) {
+                    temp.add(board[i][j]) 
+                    
+                } else {
+                    return false
+                }
+                
+            } else {
+                continue ; 
+            }
+
+        }
+        
+    }
+
+    return true ; 
 }
 
+function isColValid(board) {
+
+        for(let i = 0 ; i < max; i++) {
+            let temp = new Set() ;
+            for(let j = 0 ; j < max ; j++) {
+                if(board[j][i] !== "0") {
+                    if(!temp.has(board[j][i])) {
+                        temp.add(board[j][i]) ; 
+                    } else {
+                        return false ;
+                    }
+                } else {
+                    continue ; 
+                }
+            }
+        }
+
+        return true ; 
+}   
+
+function isBoxValid(board) {
+
+    
+
+
+    return true  ;
+}
+
+
+
 function isValid(board) {
+    
+    const isrowValid = isRowValid(board) ;
+    const iscolValid = isColValid(board) ;
 
+    if(iscolValid && isrowValid) {
+        return true ; 
+    } else {
+        return false ;
+    }
 
-
-    return true ;
 }
 
 const board = printBoard(invalidBoard) ;
