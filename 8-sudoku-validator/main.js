@@ -103,20 +103,55 @@ function isColValid(board) {
 
 function isBoxValid(board) {
 
-    
+    for(let rowBox = 0 ; rowBox < 3; rowBox++ ) {
+        for(let colBox = 0 ;colBox < 3 ; colBox++ ) {
+            
+            const box = [] ;
+
+            for(let i = 0 ; i < 3 ; i++){
+                for( let j = 0 ; j < 3; j++){
+                    const row = rowBox * 3 + i ;
+                    const col = colBox * 3 + j ;
+                    if(board[row][col] !== "0") {
+                        box.push(board[row][col]) ;
+                    }
+                }
+            }
+            if(!boxChecker(box)) {  
+                return false ;
+            }
+
+        }
+    }
 
 
     return true  ;
 }
 
+function boxChecker(box) {
+
+    
+    for(let cell of box) {
+        const seen = new Set() ;
+        if(box !== "0") {
+            if(!seen.has(box)) {
+                seen.add(box)
+            }
+            else {
+                return false ;
+            } 
+        }
+    }
+    return true; 
+}
 
 
 function isValid(board) {
     
     const isrowValid = isRowValid(board) ;
     const iscolValid = isColValid(board) ;
-
-    if(iscolValid && isrowValid) {
+    const isboxValid = isBoxValid(board) ;
+    if(iscolValid && isrowValid && isboxValid) {
         return true ; 
     } else {
         return false ;
