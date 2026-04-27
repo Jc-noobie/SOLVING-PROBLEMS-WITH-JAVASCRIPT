@@ -1,8 +1,6 @@
 let number = 5 ; 
 
-
 function isPrime(num) {
-
     if ( num < 2 ) {
         return false ;
     } else {
@@ -12,8 +10,6 @@ function isPrime(num) {
             }
         }
     }
-
-
     return true; 
 }
 
