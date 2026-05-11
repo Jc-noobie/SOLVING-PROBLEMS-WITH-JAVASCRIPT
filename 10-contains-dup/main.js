@@ -4,11 +4,11 @@ class Solution {
      * @return {boolean}
      */
     hasDuplicate(nums) {
-        let temp = new Set() ;
+        let temp_set = new Set() ;
 
         for(let i = 0 ; i  < nums.length; i++) {
-            if(!temp.has(nums[i]))  {
-                temp.add(nums[i]) ; 
+            if(!temp_set.has(nums[i]))  {
+                temp_set.add(nums[i]) ; 
             } else {
                 return true ; 
             }
