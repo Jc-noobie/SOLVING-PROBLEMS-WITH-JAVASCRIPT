@@ -3,5 +3,7 @@ class Solution {
      * @param {string[]} strs
      * @return {string[][]}
      */
-    groupAnagrams(strs) {}
+    groupAnagrams(strs) {
+        console.log("not finished")
+    }
 }
