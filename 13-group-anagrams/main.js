@@ -8,7 +8,7 @@ function groupAnagrams(strings) {
         if(!str.has(key)) {
             str.set( key, []) ;
         }
-        str.get(key).push(string) ;
+        str.get(key).push(string) ; 
     }
     return Array.from(str.values()) ;
 }
